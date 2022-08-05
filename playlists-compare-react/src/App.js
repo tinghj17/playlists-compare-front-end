@@ -3,6 +3,12 @@ import "./App.css";
 import PlaylistComponent from "./components/PlaylistComponent";
 
 function App() {
+
+  const countNums = () => {
+    let totalNums = 0;
+  }
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,6 +18,7 @@ function App() {
       <section>
         <PlaylistComponent></PlaylistComponent>
         {/* <UserComponent></UserComponent> */}
+        <h2>Playlists Selected: {countNums()}</h2>
       </section>
     </div>
   );
