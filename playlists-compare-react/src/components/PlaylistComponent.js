@@ -1,5 +1,5 @@
 import React from "react";
-import getPlaylists from "../services/PlaylistService";
+import PlaylistService from "../services/PlaylistService";
 
 class PlaylistComponent extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class PlaylistComponent extends React.Component {
   }
 
   getData = () => {
-    getPlaylists().then((response) => {
+    PlaylistService().then((response) => {
       this.setState({ playlists: response.data });
     });
   };
@@ -61,6 +61,7 @@ class PlaylistComponent extends React.Component {
             ))}
           </tbody>
         </table>
+        <h2>Playlists Selected: 0</h2>
       </div>
     );
   }
