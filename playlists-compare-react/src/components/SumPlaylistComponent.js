@@ -35,8 +35,19 @@ const SumPlaylistComponent = () => {
     return totalTracks;
   };
 
+  const selectID = () => {
+    let selectedID = [];
+    for (const playlist of playlists) {
+      if (playlist.SELECT === true) {
+        selectedID.push(playlist.ID)
+      }
+    }
+    return selectedID;
+  };
+
 
   return (
+    
     <div>
       <h1 className="text-center">Playlists</h1>
       <table className="table table-striped">
@@ -76,6 +87,7 @@ const SumPlaylistComponent = () => {
         </tbody>
       </table>
       <h2>Playlists Selected: {countPlaylists()} 🎸 Tracks Selected: {countTracks()}</h2>
+      <h2>{selectID()}</h2>
 
     </div>
   );
