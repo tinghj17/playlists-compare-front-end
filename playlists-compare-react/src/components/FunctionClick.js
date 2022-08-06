@@ -6,7 +6,7 @@ function FunctionClick() {
   }
   return (
   <div>
-    <button onClick={clickHandler}>Compare Playlists</button>
+    <button onClick={clickHandler}>Playlist Details</button>
 
   </div>
   )
