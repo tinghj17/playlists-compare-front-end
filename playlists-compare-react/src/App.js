@@ -1,12 +1,15 @@
 import "./App.css";
 import PlaylistComponent from "./components/PlaylistComponent";
-import FunctionClick from "./components/FunctionClick";
-import React, {useState, useEffect} from "react";
-import PlaylistService from "./services/PlaylistService";
 
+import React, { useState, useEffect } from "react";
+import PlaylistService from "./services/PlaylistService";
+import TrackService from "./services/TrackService";
+import TrackComponent from "./components/TrackComponent";
 
 function App() {
   const [playlists, setPlaylists] = useState([]);
+  const [tracklists, setTracklists] = useState([]);
+
 
   useEffect(() => {
     PlaylistService.getAllPlaylists()
@@ -43,11 +46,25 @@ function App() {
     let selectedID = [];
     for (const playlist of playlists) {
       if (playlist.SELECT === true) {
-        selectedID.push(playlist.ID)
+        selectedID.push(playlist.ID);
       }
     }
     return selectedID;
   };
+
+
+  // get track info
+
+  // useEffect(() => {
+  //   TrackService.getAllTracks("7CdVOjB4q7K2qR1VDS9Bso")
+  //     .then((response) => {
+  //       setTracklists(response.data);
+  //       // console.log(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
 
 
@@ -57,17 +74,21 @@ function App() {
         <p>Demo</p>
       </header>
       <section>
-        {/* <PlaylistComponent></PlaylistComponent> */}
         <PlaylistComponent
-        setPlaylists={setPlaylists}
-        playlists={playlists}
-        countPlaylists={countPlaylists}
-        countTracks={countTracks}
-        selectID={selectID}
-        
+          setPlaylists={setPlaylists}
+          playlists={playlists}
+          countPlaylists={countPlaylists}
+          countTracks={countTracks}
+          selectID={selectID}
+      
         ></PlaylistComponent>
-        <FunctionClick></FunctionClick>
-        
+      
+      <TrackComponent
+      selectID={selectID}
+      tracklists={tracklists}
+      setTracklists={setTracklists}
+
+      ></TrackComponent>
       </section>
     </div>
   );

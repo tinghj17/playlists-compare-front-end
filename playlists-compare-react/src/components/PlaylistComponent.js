@@ -45,7 +45,7 @@ const PlaylistComponent = (props) => {
     
       </table>
       <h2>Playlists Selected: {props.countPlaylists()} 🎸 Tracks Selected: {props.countTracks()}</h2>
-      <h2>{props.selectID()}</h2>
+      {/* <h2>{props.selectID()}</h2> */}
 
     </div>
   );
