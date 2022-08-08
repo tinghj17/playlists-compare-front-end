@@ -1,13 +1,21 @@
 // import React from "react";
-import TrackService from "../services/TrackService";
+import DuplicateService from "../services/DuplicateService";
 
 const TrackComponent = (props) => {
-  
   // let chooseid = props.selectID();
 
-  const fetchTracks = (id) => {
-    console.log("hello " + id);
-      TrackService.getAllTracks(id)
+  const fetchTracks = (playlistIds) => {
+    console.log("hello " + playlistIds);
+    
+    // var request = []
+    // for (let i = 0; i < playlistIds.length;i++) {
+    //   request.push(playlistIds[i])
+      
+    // }
+    // console.log(request)
+    
+      DuplicateService.getAllTracks(playlistIds)
+    
         .then((response) => {
           props.setTracklists(response.data);
           // console.log(response.data);
@@ -15,21 +23,21 @@ const TrackComponent = (props) => {
         .catch((error) => {
           console.log(error);
         });
-
+    
   };
   return (
     <div>
       <button
         onClick={() => {
           fetchTracks(props.selectID());
-          // fetchTracks("7CdVOjB4q7K2qR1VDS9Bso");
+          
         }}
       >
-        Playlist Details
+        Find Duplicates
       </button>
 
       <h2>{props.selectID()}</h2>
-      <h1 className="text-center">Tracks</h1>
+      <h1 className="text-center">Tracks in Common</h1>
       <table className="table table-striped">
         <thead>
           <tr>
