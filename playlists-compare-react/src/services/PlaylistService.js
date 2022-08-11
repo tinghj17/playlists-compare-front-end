@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const PLAYLISTS_REST_API_URL = "http://localhost:8080/api/general-info";
+const PLAYLISTS_REST_API_URL = "https://guarded-eyrie-34574.herokuapp.com/api/general-info";
 
 // class UserService {
 //   getUsers() {

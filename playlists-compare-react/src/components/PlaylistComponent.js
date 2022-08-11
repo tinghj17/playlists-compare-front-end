@@ -13,7 +13,7 @@ const PlaylistComponent = (props) => {
             <td>Select</td>
             <td>Name</td>
             <td>#TRACKS</td>
-            <td>ID</td>
+            {/* <td>ID</td> */}
           </tr>
         </thead>
         <tbody>

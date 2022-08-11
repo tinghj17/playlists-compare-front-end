@@ -3,7 +3,7 @@ import PlaylistComponent from "./components/PlaylistComponent";
 
 import React, { useState, useEffect } from "react";
 import PlaylistService from "./services/PlaylistService";
-import TrackService from "./services/TrackService";
+
 import TrackComponent from "./components/TrackComponent";
 
 function App() {
@@ -49,7 +49,7 @@ function App() {
         selectedID.push(playlist.ID);
       }
     }
-    return selectedID;
+    return selectedID.toString();
   };
 
 

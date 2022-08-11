@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const TRACKS_REST_API_URL = "http://localhost:8080/api/testing";
+const TRACKS_REST_API_URL = "https://guarded-eyrie-34574.herokuapp.com/api/testing";
 
 class TrackService {
   getAllTracks(id) {
