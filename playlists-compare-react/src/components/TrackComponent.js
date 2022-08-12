@@ -26,6 +26,14 @@ const TrackComponent = (props) => {
         Compare
       </button>
 
+      <button
+        onClick={() => {
+          fetchTracks(props.selectID());
+        }}
+      >
+        Compare
+      </button>
+
       {/* <h2>{props.selectID()}</h2> */}
       <h1 className="text-center">Tracks in Common</h1>
       <table className="table table-striped">
