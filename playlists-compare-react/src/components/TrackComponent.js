@@ -18,13 +18,7 @@ const TrackComponent = (props) => {
   };
   return (
     <div>
-      <button
-        onClick={() => {
-          fetchTracks(props.selectID());
-        }}
-      >
-        Compare
-      </button>
+
 
       <button
         onClick={() => {
@@ -34,24 +28,18 @@ const TrackComponent = (props) => {
         Compare
       </button>
 
-      {/* <h2>{props.selectID()}</h2> */}
-      <h1 className="text-center">Tracks in Common</h1>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Artist</td>
-          </tr>
-        </thead>
-        <tbody>
+
+      <div>
           {props.tracklists.map((tracklist) => (
-            <tr>
-              <td>{tracklist.TRACKNAME}</td>
-              <td>{tracklist.ARTIST}</td>
-            </tr>
+            <ul>
+              <li>{tracklist.TRACKNAME}</li>
+              <li>{tracklist.ARTIST}</li>
+              <li><img src={tracklist.IMG}/></li>
+              </ul>
           ))}
-        </tbody>
-      </table>
+          </div>
+      
+    
     </div>
   );
 };

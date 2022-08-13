@@ -2,18 +2,22 @@ import React from "react";
 
 const Navbar = () => {
   return (
-      <nav className="nav">
-        {/* <a href="/" className="site-title">Demo</a> */}
-        <ul>
-          <li className="active">
-            <a href="/home">My Playlists</a>
-          </li>
-          <li className="active">
-            <a href="/compare">Play with Friends</a>
-          </li>
-        </ul>
-      </nav>
-  )
-}
+    <nav className="navbar">
+      <div className="leftSide">
+      🎸 Playlists Compare 🎸
+      </div>
+
+      <div className="rightSide">
+        <a href="/home">
+          My Playlists
+        </a>
+
+        <a  href="/compare">
+          Play with Friends
+        </a>
+      </div>
+    </nav>
+  );
+};
 
 export default Navbar;

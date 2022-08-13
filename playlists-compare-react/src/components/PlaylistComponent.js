@@ -6,10 +6,9 @@ const PlaylistComponent = (props) => {
   return (
 
     <div>
-      <h1 className="text-center">Playlists</h1>
       <table className="table table-striped">
         <thead>
-          <tr>
+          <tr className="columnName">
             <td>Select</td>
             <td>Name</td>
             <td>#TRACKS</td>
@@ -38,11 +37,10 @@ const PlaylistComponent = (props) => {
               </td>
               <td>{playlist.NAME}</td>
               <td>{playlist.TRACKS}</td>
-              <td>{playlist.ID}</td>
+              {/* <td>{playlist.ID}</td> */}
             </tr>
           ))}
         </tbody>
-    
       </table>
       <h2>Playlists Selected: {props.countPlaylists()} 🎸 Tracks Selected: {props.countTracks()}</h2>
       {/* <h2>{props.selectID()}</h2> */}
