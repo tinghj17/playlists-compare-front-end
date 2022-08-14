@@ -1,5 +1,6 @@
 // import React from "react";
 import DuplicateService from "../services/DuplicateService";
+import TrackItem from "./TrackItem";
 
 const TrackComponent = (props) => {
   // let chooseid = props.selectID();
@@ -18,28 +19,31 @@ const TrackComponent = (props) => {
   };
   return (
     <div>
-
-
       <button
         onClick={() => {
           fetchTracks(props.selectID());
         }}
+        className="button"
       >
-        Compare
+        Click here to compare
       </button>
 
-
-      <div>
+      <div className="trackSum">
+        <div className="trackList">
           {props.tracklists.map((tracklist) => (
-            <ul>
-              <li>{tracklist.TRACKNAME}</li>
-              <li>{tracklist.ARTIST}</li>
-              <li><img src={tracklist.IMG}/></li>
-              </ul>
+          
+            <TrackItem
+              trackName={tracklist.TRACKNAME}
+              artist={tracklist.ARTIST}
+              img={tracklist.IMG}
+             
+                // <img src={tracklist.IMG} />
+                />
+           
+          
           ))}
-          </div>
-      
-    
+        </div>
+      </div>
     </div>
   );
 };

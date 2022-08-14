@@ -1,9 +1,10 @@
-table {
-    background-color: rgb(228, 121, 139);
-    /* background-repeat: no-repeat;
-    background-size: cover; */
-}
 
 table .columnName {
     font-weight: bold;
+    color: #00473e;
+    padding-top: 20px;
+}
+
+.playlist-sum {
+    padding-top: 15px;
 }

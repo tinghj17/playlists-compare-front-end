@@ -1,16 +1,13 @@
 import React from "react";
 
 const PlaylistComponent = (props) => {
-
-  
   return (
-
-    <div>
+    <div className="container my-5">
       <table className="table table-striped">
         <thead>
           <tr className="columnName">
             <td>Select</td>
-            <td>Name</td>
+            <td>Playlist Name</td>
             <td>#TRACKS</td>
             {/* <td>ID</td> */}
           </tr>
@@ -22,7 +19,7 @@ const PlaylistComponent = (props) => {
                 <input
                   onChange={(event) => {
                     let checked = event.target.checked;
-                  props.setPlaylists(
+                    props.setPlaylists(
                       props.playlists.map((data) => {
                         if (data.ID === playlist.ID) {
                           data.SELECT = checked;
@@ -42,9 +39,10 @@ const PlaylistComponent = (props) => {
           ))}
         </tbody>
       </table>
-      <h2>Playlists Selected: {props.countPlaylists()} 🎸 Tracks Selected: {props.countTracks()}</h2>
-      {/* <h2>{props.selectID()}</h2> */}
-
+      <h2 className="playlist-sum">
+        Playlists Selected: {props.countPlaylists()} 🎸 Tracks Selected:{" "}
+        {props.countTracks()}
+      </h2>
     </div>
   );
 };
