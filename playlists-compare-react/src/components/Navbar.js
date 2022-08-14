@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const Navbar = () => {
   return (
     <nav className="navbar">
@@ -13,7 +14,7 @@ const Navbar = () => {
         </a>
 
         <a  href="/compare">
-          Play with Friends
+          Play with Friend
         </a>
       </div>
     </nav>

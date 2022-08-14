@@ -1,0 +1,16 @@
+.inputArea {
+    margin-top: 50px;
+}
+
+h2 {
+    padding-top: 10px;
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 40%;
+}
+
+

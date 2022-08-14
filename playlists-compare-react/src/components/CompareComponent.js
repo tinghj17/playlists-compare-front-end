@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DuplicateService from "../services/DuplicateService";
+import TrackItem from "./TrackItem";
 
 const CompareComponent = (props) => {
   const [data, setData] = useState({
@@ -20,9 +21,6 @@ const CompareComponent = (props) => {
     let newselectedID = [];
     newselectedID.push(new URL(data.playlist1).pathname.split("/")[2]);
     newselectedID.push(new URL(data.playlist2).pathname.split("/")[2]);
-  
-
-  
 
     console.log("hello " + newselectedID.toString());
     DuplicateService.getAllTracks(newselectedID.toString())
@@ -36,35 +34,36 @@ const CompareComponent = (props) => {
   };
 
   return (
-    <div>
-      <h1 className="text-center">Spotify Wrapped Compare</h1>
+    <div className="inputArea">
+      <h1>Spotify Playlist Compare</h1>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <h2 className="text-center"> Playlist One </h2>{" "}
-        <input type="text" name="playlist1" onChange={handleChange}></input>
-        <h2 className="text-center"> Playlist Two </h2>{" "}
-        <input type="text" name="playlist2" onChange={handleChange}></input>
-        <h2></h2>
-        <h2>
-          <button>Let's Find out</button>
-        </h2>
+        <h2> Playlist One </h2>{" "}
+        <input
+          classname="inputbox"
+          type="text"
+          name="playlist1"
+          onChange={handleChange}
+        ></input>
+        <h2> Playlist Two </h2>{" "}
+        <input
+          classname="inputbox"
+          type="text"
+          name="playlist2"
+          onChange={handleChange}
+        ></input>
+        <h3><button className="button">Let's Find out</button></h3>
       </form>
-      <h1 className="text-center">Tracks in Common</h1>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Artist</td>
-          </tr>
-        </thead>
-        <tbody>
+      <div className="trackSum">
+        <div className="trackList">
           {tracklists.map((tracklist) => (
-            <tr>
-              <td>{tracklist.TRACKNAME}</td>
-              <td>{tracklist.ARTIST}</td>
-            </tr>
+            <TrackItem
+              trackName={tracklist.TRACKNAME}
+              artist={tracklist.ARTIST}
+              img={tracklist.IMG}
+            />
           ))}
-        </tbody>
-      </table>
+        </div>
+      </div>
     </div>
   );
 };

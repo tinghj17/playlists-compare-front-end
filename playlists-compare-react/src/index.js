@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/Navbar.css"
 import "./styles/PlaylistComponent.css"
 import "./styles/TrackComponent.css"
+import "./styles/CompareComponent.css"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

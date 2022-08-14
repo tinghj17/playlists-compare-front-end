@@ -31,16 +31,11 @@ const TrackComponent = (props) => {
       <div className="trackSum">
         <div className="trackList">
           {props.tracklists.map((tracklist) => (
-          
             <TrackItem
               trackName={tracklist.TRACKNAME}
               artist={tracklist.ARTIST}
               img={tracklist.IMG}
-             
-                // <img src={tracklist.IMG} />
-                />
-           
-          
+            />
           ))}
         </div>
       </div>
