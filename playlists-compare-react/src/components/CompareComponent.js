@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DuplicateService from "../services/DuplicateService";
+// import ArtistService from "../services/ArtistService";
 import TrackItem from "./TrackItem";
 
 const CompareComponent = (props) => {
@@ -8,6 +9,7 @@ const CompareComponent = (props) => {
     playlist2: " ",
   });
   const [tracklists, setTracklists] = useState([]);
+  // const [artistlists, setArtistlists] = useState([]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,6 +33,15 @@ const CompareComponent = (props) => {
       .catch((error) => {
         console.log(error);
       });
+
+      // ArtistService.getAllArtists(newselectedID.toString())
+      // .then((response) => {
+      //   setArtistlists(response.data);
+      //   console.log(response.data);
+      // })
+      // .catch((error) => {
+      //   console.log(error);
+      // });
   };
 
   return (
@@ -64,6 +75,8 @@ const CompareComponent = (props) => {
           ))}
         </div>
       </div>
+      
+    
     </div>
   );
 };
