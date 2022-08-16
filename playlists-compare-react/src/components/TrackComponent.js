@@ -4,7 +4,7 @@ import DuplicateService from "../services/DuplicateService";
 import TrackItem from "./TrackItem";
 
 const TrackComponent = (props) => {
-  
+
   const fetchDetails = (playlistId) => {
     console.log("hello " + playlistId);
     TrackService.getAllTracks(playlistId)
@@ -12,9 +12,9 @@ const TrackComponent = (props) => {
         props.setTracklists(response.data);
         // console.log(response.data);
       })
-      .catch((error) => {
-        console.log(error);
-
+      .catch((err) => {
+        console.log(err);
+      
       });
   };
 
@@ -31,34 +31,32 @@ const TrackComponent = (props) => {
       });
   };
 
-  
+ 
   return (
     <div>
       <div class="container">
-  <div class="row">
-  <div class="col-12 col-sm-6 col-md-6">
-  
-      <button
-        onClick={() => {
-          fetchDetails(props.selectID());
-        }}
-        className="buttonDetails"
-      >
-        Playlist Details
-      </button>
-      </div>
-      <div class="col-12 col-sm-6 col-md-6">
-
-      <button
-        onClick={() => {
-          fetchTracks(props.selectID());
-        }}
-        className="button"
-      >
-        Click here to compare
-      </button>
-   </div>
-      </div>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-6">
+            <button
+              onClick={() => {
+                fetchDetails(props.selectID());
+              }}
+              className="buttonDetails"
+            >
+              Playlist Details
+            </button>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6">
+            <button
+              onClick={() => {
+                fetchTracks(props.selectID());
+              }}
+              className="button"
+            >
+              Click here to compare
+            </button>
+          </div>
+        </div>
       </div>
 
       <div className="trackSum">
