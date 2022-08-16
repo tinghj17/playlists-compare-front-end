@@ -8,3 +8,10 @@ table .columnName {
 .playlist-sum {
     padding-top: 15px;
 }
+
+/* table {
+    background-image: url("bg.png");
+    background-position: right bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+} */

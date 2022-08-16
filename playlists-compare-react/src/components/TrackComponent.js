@@ -4,9 +4,8 @@ import DuplicateService from "../services/DuplicateService";
 import TrackItem from "./TrackItem";
 
 const TrackComponent = (props) => {
-
   const fetchDetails = (playlistId) => {
-    console.log("hello " + playlistId);
+    // console.log("hello " + playlistId);
     TrackService.getAllTracks(playlistId)
       .then((response) => {
         props.setTracklists(response.data);
@@ -14,12 +13,11 @@ const TrackComponent = (props) => {
       })
       .catch((err) => {
         console.log(err);
-      
       });
   };
 
   const fetchTracks = (playlistIds) => {
-    console.log("hello " + playlistIds);
+    // console.log("hello " + playlistIds);
     DuplicateService.getAllTracks(playlistIds)
 
       .then((response) => {
@@ -31,7 +29,6 @@ const TrackComponent = (props) => {
       });
   };
 
- 
   return (
     <div>
       <div class="container">
@@ -43,7 +40,7 @@ const TrackComponent = (props) => {
               }}
               className="buttonDetails"
             >
-              Playlist Details
+              Check playlist details
             </button>
           </div>
           <div class="col-12 col-sm-6 col-md-6">
@@ -53,12 +50,11 @@ const TrackComponent = (props) => {
               }}
               className="button"
             >
-              Click here to compare
+              Find tracks in common
             </button>
           </div>
         </div>
       </div>
-
       <div className="trackSum">
         <div className="trackList">
           {props.tracklists.map((tracklist) => (

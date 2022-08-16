@@ -16,14 +16,13 @@ function App() {
 
   return (
     <>
-    <div className="App">
-      <header className="App-header">
-
-        <Navbar />
-      </header>
-      <Component/>
-      
-    </div>
+      <div className="App">
+        <header className="App-header">
+          <Navbar />
+        </header>
+        <Component />
+        <footer>&copy; Copyright Tinghui Jiang 2022</footer>
+      </div>
     </>
   );
 }

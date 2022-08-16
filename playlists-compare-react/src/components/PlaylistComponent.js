@@ -4,6 +4,7 @@ const PlaylistComponent = (props) => {
 
 
   return (
+    <div className="playlists-bg">
     <div className="container my-5">
       <table className="table table-striped">
         <thead>
@@ -45,6 +46,7 @@ const PlaylistComponent = (props) => {
         Playlists Selected: {props.countPlaylists()} 🎸 Tracks Selected:{" "}
         {props.countTracks()}
       </h2>
+    </div>
     </div>
   );
 };

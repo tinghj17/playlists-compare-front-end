@@ -46,13 +46,15 @@ const CompareComponent = (props) => {
 
   return (
     <div className="inputArea">
-      <h1>Spotify Playlist Compare</h1>
+      <div className="inputBG">
+      <h1>Spotify Playlists Compare </h1>
       <form onSubmit={(e) => handleSubmit(e)}>
         <h2> Playlist One </h2>{" "}
         <input
           classname="inputbox"
           type="text"
           name="playlist1"
+          placeholder="Please paste the URL of a public Spotify playlist here"
           onChange={handleChange}
         ></input>
         <h2> Playlist Two </h2>{" "}
@@ -60,10 +62,12 @@ const CompareComponent = (props) => {
           classname="inputbox"
           type="text"
           name="playlist2"
+          placeholder="Please paste the URL of a public Spotify playlist here"
           onChange={handleChange}
         ></input>
-        <h3><button className="button">Let's Find out</button></h3>
+        <h3><button className="button">Let's find tracks in common</button></h3>
       </form>
+      </div>
       <div className="trackSum">
         <div className="trackList">
           {tracklists.map((tracklist) => (

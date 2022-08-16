@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="leftSide">
-      🎸 Playlists Compare 🎸
+      🧡 Playlists Compare 
       {/* <img src={bg} height= "72px" width="123px"/> */}
       </div>
 
